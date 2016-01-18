@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :airtel 
 
 
-
+  root :to => 'packs#index'
   get 'extractor_type' => 'airtel#extractor_type'
   get 'delete_packs' => 'airtel#delete_packs'
   get 'cate' => 'airtel#cate'
