@@ -34,11 +34,16 @@ gem 'puma'
 
 gem 'httparty'
 
+gem 'mechanize'
+
 gem 'figaro'
 
 gem 'heroku'
 
 gem 'omniauth-facebook'
+
+gem 'selenium-webdriver', '~> 2.48'#, '>= 2.48.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

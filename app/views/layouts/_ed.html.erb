@@ -1,0 +1,122 @@
+<i><b>Extract Packs:</b></i>
+<%= form_tag url_for(:controller=>"airtel",:action =>"extractor_type") ,:method=>"get" do %>
+
+    <select name="operator_id">
+    
+    <% Operator.all.each{ |aoperator| %>
+        <option value="<%= aoperator.id %>" <% if @operator_id==aoperator.id then%>selected<% end %>><%= aoperator.name %></option>
+    <% } %>
+    </select>
+
+
+    <select name="region_id">
+    
+    <% Region.all.each{ |aregion| %>
+        <option value="<%= aregion.id %>" <% if @region_id==aregion.id then%>selected<% end %>><%= aregion.name %></option>
+    <% } %>
+    </select>
+
+    <select name="connection_type">
+    <option value="true"><%="Prepaid"%></option>
+    <option value="false"><%="Postpaid"%></option>
+    </select>
+
+    <select name="pack_type">
+    <option value=  1><%="Mobile"%></option>
+    <option value=  0><%="Datacard"%></option>
+    <option value= -1><%="DTH"%></option>
+    </select>
+    
+    
+
+
+
+    <!-- <select name= "operator_type">
+    <option value="airtel"><%="Airtel"%></option>
+    <option value="aircel"><%="Aircel"%></option>
+    <option value="idea"><%="Idea"%></option>
+    <option value="vodafone"><%="Vodafone"%></option>
+    </select> -->
+
+    <%= submit_tag 'Extract'%>
+    <%end%>    
+
+
+ <i><b>List Packs:</b></i>
+<%= form_tag url_for(:controller=>"airtel",:action =>"index") ,:method=>"get" do %>
+
+    <select name="operator_id">
+    
+    <% Operator.all.each{ |aoperator| %>
+        <option value="<%= aoperator.id %>" <% if @operator_id==aoperator.id then%>selected<% end %>><%= aoperator.name %></option>
+    <% } %>
+    </select>
+
+
+    <select name="region_id">
+    
+    <% Region.all.each{ |aregion| %>
+        <option value="<%= aregion.id %>" <% if @region_id==aregion.id then%>selected<% end %>><%= aregion.name %></option>
+    <% } %>
+    </select>
+
+    <select name="connection_type">
+    <option value="true"><%="Prepaid"%></option>
+    <option value="false"><%="Postpaid"%></option>
+    </select>
+
+    <select name="pack_type">
+    <option value=  1><%="Mobile"%></option>
+    <option value=  0><%="Datacard"%></option>
+    <option value= -1><%="DTH"%></option>
+    </select>
+    
+    <%= submit_tag 'List'%>
+    <%end%>    
+
+
+
+<%= form_tag url_for(:controller=>"airtel", :action=>"cate"), :method=>"get" do%>
+
+<%= radio_button_tag(:category, "Top-up Recharge") %>
+<%= label_tag(:category_Top_up_Recharge    , "Talktime") %>
+
+<%= radio_button_tag(:category, "2G Data Recharge") %>
+<%= label_tag(:category_2G_Data_Recharge    , "GPRS") %>
+
+<%= submit_tag 'GO'%>
+<%end%>
+
+
+
+    <i><b>Delete Packs:</b></i>
+<%= form_tag url_for(:controller=>"airtel",:action =>"delete_packs") ,:method=>"get" do %>
+
+    <select name="operator_id">
+    
+    <% Operator.all.each{ |aoperator| %>
+        <option value="<%= aoperator.id %>" <% if @operator_id==aoperator.id then%>selected<% end %>><%= aoperator.name %></option>
+    <% } %>
+    </select>
+
+
+    <select name="region_id">
+    
+    <% Region.all.each{ |aregion| %>
+        <option value="<%= aregion.id %>" <% if @region_id==aregion.id then%>selected<% end %>><%= aregion.name %></option>
+    <% } %>
+    </select>
+
+    <select name="connection_type">
+    <option value="true"><%="Prepaid"%></option>
+    <option value="false"><%="Postpaid"%></option>
+    </select>
+
+    <select name="pack_type">
+    <option value=  1><%="Mobile"%></option>
+    <option value=  0><%="Datacard"%></option>
+    <option value= -1><%="DTH"%></option>
+    </select>
+    
+    <%= submit_tag 'Delete'%>
+    <%end%>    
