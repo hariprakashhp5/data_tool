@@ -38,14 +38,10 @@ agent=Mechanize.new
      @offer = pack.search('td[2]').text.strip
      @validity = pack.search('td[5]').text.strip
      @name = pack.search('td[6]').text.strip
-     if @name == "Top-up Recharge"
-      @caty= "Talktime"
-      elsif @name = "2G Data Recharge"
-        @caty = "GPRS"
-      elsif @name ="Special Recharge - STV : Combo"
-        @caty ="Ratecutters"
-        elsif ["3G/4G Data Recharge", "3G Data Recharge"].any? {|n| @name.include? n} then @caty = "3G-Data" 
-    end
+      if @name.include?("Top-up Recharge") then @caty = "Talktime" end
+      if @name.include?("2G Data Recharge") then @caty = "GPRS" end
+      if @name.include?("Special Recharge - STV : Combo") then @caty = "Ratecutters" end
+      if ["3G/4G Data Recharge", "3G Data Recharge"].any? {|n| @name.include? n} then @caty = "3G-Data" end 
      if @price.to_i > 9
      update_database
  	 end
