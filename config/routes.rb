@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'extractor_type' => 'airtel#extractor_type'
   get 'delete_packs' => 'airtel#delete_packs'
   get 'cate' => 'airtel#cate'
+  get '/tt' => 'airtel#talk'
   #get 'list' => 'airtel#list'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

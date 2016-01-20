@@ -13,7 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+ gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -30,17 +30,21 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
 
-group :development do
-  gem 'capistrano'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm'
-end
+# group :development do
+#   gem 'capistrano'
+#   gem 'capistrano3-puma'
+#   gem 'capistrano-rails', require: false
+#   gem 'capistrano-bundler', require: false
+#   gem 'capistrano-rvm'
+# end
 
 
+# group :production do
+# 	gem 'unicorn'
+# 	gem 'msql2'
+# end
 
-
+#gem 'rubber', '2.0.1'
 gem 'puma'
 
 gem 'httparty'
@@ -51,7 +55,7 @@ gem 'figaro'
 
 gem 'heroku'
 
-gem 'omniauth-facebook'
+
 
 gem 'selenium-webdriver', '~> 2.48'#, '>= 2.48.1'
 

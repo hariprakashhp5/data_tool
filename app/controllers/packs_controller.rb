@@ -69,6 +69,6 @@ class PacksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pack_params
-      params.require(:pack).permit(:region_id, :operator_id, :connection_type, :pack_type, :price, :offer, :validity, :description, :tag)
+      params.require(:pack).permit(:region_id, :operator_id, :connection_type, :pack_type, :price, :offer, :validity, :description, :tag, :caty)
     end
 end

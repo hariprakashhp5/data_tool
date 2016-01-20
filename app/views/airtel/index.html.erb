@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<%=link_to "EX-Offer", tt_path, remote:true%>
 
 
-<h1>AIRTEL PACKS</h1>
+<h1><%=@operator%> >> <%=@region%> >> Packs</h1>
 
+<div id="test">
 <table>
   <thead>
     <tr>
@@ -15,6 +17,7 @@
       <th>Offer</th>
       <th>Validity</th>
       <th>Description</th>
+      <th>Category</th>
       <th>Tag</th>
       <th colspan="3"></th>
     </tr>
@@ -31,6 +34,7 @@
         <td><%= pack.offer %></td>
         <td><%= pack.validity %></td>
         <td><%= pack.description %></td>
+        <td><%= pack.caty %></td>
         <td><%= pack.tag %></td>
         <td><%= link_to 'Show', pack %></td>
         <td><%= link_to 'Edit', edit_pack_path(pack) %></td>
@@ -39,7 +43,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'New Pack', new_pack_path %>

@@ -76,13 +76,23 @@
 
 
 
-<%= form_tag url_for(:controller=>"airtel", :action=>"cate"), :method=>"get" do%>
+<%= form_tag url_for(:controller=>"airtel", :action=>"talk"), remote:true, :method=>"get" do%>
 
-<%= radio_button_tag(:category, "Top-up Recharge") %>
-<%= label_tag(:category_Top_up_Recharge    , "Talktime") %>
+<%= radio_button_tag(:category, "Talktime") %>
+<%= label_tag(:category_Talktime    , "Talktime") %>
 
-<%= radio_button_tag(:category, "2G Data Recharge") %>
-<%= label_tag(:category_2G_Data_Recharge    , "GPRS") %>
+<%= radio_button_tag(:category, "Sms") %>
+<%= label_tag(:category_Sms    , "Sms") %>
+
+<%= radio_button_tag(:category, "Data") %>
+<%= label_tag(:category_Data    , "Data") %>
+
+
+<%= radio_button_tag(:category, "Ratecutters") %>
+<%= label_tag(:category_Ratecutters    , "Ratecutters") %>
+
+<%= radio_button_tag(:category, "Combo") %>
+<%= label_tag(:category_Combo    , "Combo-Packs") %>
 
 <%= submit_tag 'GO'%>
 <%end%>

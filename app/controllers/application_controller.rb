@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 def update_database
     puts "updating local database"
       @pack=Pack.new(:region_id=>params[:region_id], :operator_id=>params[:operator_id], :connection_type=>params[:connection_type], 
-      	:pack_type=>params[:pack_type], :price=>@price, :offer=>@offer, :validity=>@validity, :description=>nil, :tag=>@name)
+      	:pack_type=>params[:pack_type], :price=>@price, :offer=>@offer, :validity=>@validity, :description=>nil, :tag=>@name, :caty=>@caty)
       @pack.save
  end
 

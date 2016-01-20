@@ -1,7 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Packs</h1>
-
 <table>
   <thead>
     <tr>
@@ -20,7 +16,7 @@
   </thead>
 
   <tbody>
-    <% @packs.each do |pack| %>
+    <% @airtels.each do |pack| %>
       <tr>
         <td><%= pack.region_id %></td>
         <td><%= pack.operator_id %></td>
@@ -39,7 +35,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Pack', new_pack_path %>
