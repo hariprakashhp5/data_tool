@@ -27,6 +27,8 @@ def index
 end
 
 def talk
+  # if params[:category] == "Sms"
+  #   rr=@@temp.
   @airtels=@@temp.where("caty=?",params[:category])
 end
 
@@ -38,7 +40,7 @@ agent=Mechanize.new
      @offer = pack.search('td[2]').text.strip
      @validity = pack.search('td[5]').text.strip
      @name = pack.search('td[6]').text.strip
-      if @name.include?("Top-up Recharge") then @caty = "Talktime" end
+      if @name.include?("Top-up Recharge", "Full Talk-time Recharge") then @caty = "Talktime" end
       if @name.include?("2G Data Recharge") then @caty = "GPRS" end
       if @name.include?("Special Recharge - STV : Combo") then @caty = "Ratecutters" end
       if ["3G/4G Data Recharge", "3G Data Recharge"].any? {|n| @name.include? n} then @caty = "3G-Data" end 
