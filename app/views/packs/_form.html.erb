@@ -1,0 +1,62 @@
+<%= form_for(@pack) do |f| %>
+  <% if @pack.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pack.errors.count, "error") %> prohibited this pack from being saved:</h2>
+
+      <ul>
+      <% @pack.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="field">
+    <%= f.label :'region id' %><br>
+    <%= f.text_field :region_id %>
+  </div>
+
+   <div class="field">
+    <%= f.label :'operator id' %><br>
+    <%= f.text_field :operator_id %>
+  </div>
+
+  <div class="field">
+        <%= f.label "Connection Type" %> <br />
+        <%=f.select :connection_type, options_for_connection,{}%>
+    </div>
+
+    <div class="field">
+        <%= f.label "pack Type" %> <br />
+        <%=f.select :pack_type, options_for_pack,{}%>
+    </div>
+
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :offer %><br>
+    <%= f.text_field :offer %>
+  </div>
+  <div class="field">
+    <%= f.label :validity %><br>
+    <%= f.text_field :validity %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :tag %><br>
+    <%= f.text_area :tag %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :caty %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

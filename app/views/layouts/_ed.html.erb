@@ -1,0 +1,143 @@
+<div class="navigate">
+<a href="/packs">ALL PACKS</a>
+<a href="/airtel">LIST</a>
+<a href="/operators">OPERATORS</a>
+<a href="/regions">REGIONS</a>
+<a href="/prlinks">LINKS</a>
+</div>
+
+<i><b>Extract Packs:</b></i>
+<%= form_tag url_for(:controller=>"airtel",:action =>"extractor_type") ,:method=>"get" do %>
+
+    <select name="operator_id">
+    
+    <% Operator.all.each{ |aoperator| %>
+        <option value="<%= aoperator.id %>" <% if @operator_id==aoperator.id then%>selected<% end %>><%= aoperator.name %></option>
+    <% } %>
+    </select>
+
+
+    <select name="region_id">
+    
+    <% Region.all.each{ |aregion| %>
+        <option value="<%= aregion.id %>" <% if @region_id==aregion.id then%>selected<% end %>><%= aregion.name %></option>
+    <% } %>
+    </select>
+
+    <select name="connection_type">
+    <option value="true"><%="Prepaid"%></option>
+    <option value="false"><%="Postpaid"%></option>
+    </select>
+
+    <select name="pack_type">
+    <option value=  1><%="Mobile"%></option>
+    <option value=  0><%="Datacard"%></option>
+    <option value= -1><%="DTH"%></option>
+    </select>
+    
+    
+
+
+
+    <!-- <select name= "operator_type">
+    <option value="airtel"><%="Airtel"%></option>
+    <option value="aircel"><%="Aircel"%></option>
+    <option value="idea"><%="Idea"%></option>
+    <option value="vodafone"><%="Vodafone"%></option>
+    </select> -->
+
+    <%= submit_tag 'Extract'%>
+    <%end%>    
+
+
+ <i><b>List Packs:</b></i>
+<%= form_tag url_for(:controller=>"airtel",:action =>"index") ,:method=>"get" do %>
+
+    <select name="operator_id">
+    
+    <% Operator.all.each{ |aoperator| %>
+        <option value="<%= aoperator.id %>" <% if @operator_id==aoperator.id then%>selected<% end %>><%= aoperator.name %></option>
+    <% } %>
+    </select>
+
+
+    <select name="region_id">
+    
+    <% Region.all.each{ |aregion| %>
+        <option value="<%= aregion.id %>" <% if @region_id==aregion.id then%>selected<% end %>><%= aregion.name %></option>
+    <% } %>
+    </select>
+
+    <select name="connection_type">
+    <option value="true"><%="Prepaid"%></option>
+    <option value="false"><%="Postpaid"%></option>
+    </select>
+
+    <select name="pack_type">
+    <option value=  1><%="Mobile"%></option>
+    <option value=  0><%="Datacard"%></option>
+    <option value= -1><%="DTH"%></option>
+    </select>
+    
+    <%= submit_tag 'List'%>
+    <%end%>    
+
+
+
+<%= form_tag url_for(:controller=>"airtel", :action=>"talk"), remote:true, :method=>"get" do%>
+
+<%= radio_button_tag(:category, "Talktime") %>
+<%= label_tag(:category_Talktime    , "Talktime") %>
+
+<%= radio_button_tag(:category, "SMS") %>
+<%= label_tag(:category_Sms    , "Sms") %>
+
+<%= radio_button_tag(:category, "GPRS") %>
+<%= label_tag(:category_Data    , "GPRS-Data") %>
+
+<%= radio_button_tag(:category, "3G-Data") %>
+<%= label_tag(:category_Data    , "3G-Data") %>
+
+
+<%= radio_button_tag(:category, "Ratecutters") %>
+<%= label_tag(:category_Ratecutters    , "Ratecutters") %>
+
+<%= radio_button_tag(:category, "Combo") %>
+<%= label_tag(:category_Combo    , "Combo-Packs") %>
+
+<%= submit_tag 'GO'%>
+<%end%>
+
+
+
+    <i><b>Delete Packs:</b></i>
+<%= form_tag url_for(:controller=>"airtel",:action =>"delete_packs") ,:method=>"get" do %>
+
+    <select name="operator_id">
+    
+    <% Operator.all.each{ |aoperator| %>
+        <option value="<%= aoperator.id %>" <% if @operator_id==aoperator.id then%>selected<% end %>><%= aoperator.name %></option>
+    <% } %>
+    </select>
+
+
+    <select name="region_id">
+    
+    <% Region.all.each{ |aregion| %>
+        <option value="<%= aregion.id %>" <% if @region_id==aregion.id then%>selected<% end %>><%= aregion.name %></option>
+    <% } %>
+    </select>
+
+    <select name="connection_type">
+    <option value="true"><%="Prepaid"%></option>
+    <option value="false"><%="Postpaid"%></option>
+    </select>
+
+    <select name="pack_type">
+    <option value=  1><%="Mobile"%></option>
+    <option value=  0><%="Datacard"%></option>
+    <option value= -1><%="DTH"%></option>
+    </select>
+    
+    <%= submit_tag 'Delete'%>
+    <%end%>    

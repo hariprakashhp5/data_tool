@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @prlink.region_id %>
+</p>
+
+<p>
+  <strong>Operator:</strong>
+  <%= @prlink.operator_id %>
+</p>
+
+<p>
+  <strong>Link1:</strong>
+  <%= @prlink.link1 %>
+</p>
+
+<p>
+  <strong>Link2:</strong>
+  <%= @prlink.link2 %>
+</p>
+
+<p>
+  <strong>Link3:</strong>
+  <%= @prlink.link3 %>
+</p>
+
+<p>
+  <strong>Link4:</strong>
+  <%= @prlink.link4 %>
+</p>
+
+<%= link_to 'Edit', edit_prlink_path(@prlink) %> |
+<%= link_to 'Back', prlinks_path %>

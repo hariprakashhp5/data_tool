@@ -1,0 +1,41 @@
+<%= form_for(@prlink) do |f| %>
+  <% if @prlink.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@prlink.errors.count, "error") %> prohibited this prlink from being saved:</h2>
+
+      <ul>
+      <% @prlink.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :region_id %><br>
+    <%= f.number_field :region_id %>
+  </div>
+  <div class="field">
+    <%= f.label :operator_id %><br>
+    <%= f.number_field :operator_id %>
+  </div>
+  <div class="field">
+    <%= f.label :link1 %><br>
+    <%= f.text_field :link1 %>
+  </div>
+  <div class="field">
+    <%= f.label :link2 %><br>
+    <%= f.text_field :link2 %>
+  </div>
+  <div class="field">
+    <%= f.label :link3 %><br>
+    <%= f.text_field :link3 %>
+  </div>
+  <div class="field">
+    <%= f.label :link4 %><br>
+    <%= f.text_field :link4 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
