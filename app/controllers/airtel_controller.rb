@@ -167,8 +167,11 @@ end
 
 
 def uninor_extractor
+<<<<<<< HEAD
   headless = Headless.new
   headless.start  
+=======
+>>>>>>> 70b5221168b680587a3868bfcab60aff16fa3039
   driver = Selenium::WebDriver.for :firefox
   arr=["exclusive-offer","extra-talktime","full-talktime","regular-recharge"]
   arr.each do |type|
@@ -252,13 +255,17 @@ if @price.to_i > 9
 end
 end
 driver.close
+<<<<<<< HEAD
 headless.destroy
+=======
+>>>>>>> 70b5221168b680587a3868bfcab60aff16fa3039
 redirect_to '/airtel'
 
 end
 
 
 def reliance_GSM_CDMA
+<<<<<<< HEAD
   headless = Headless.new
   headless.start  
   driver = Selenium::WebDriver.for :firefox
@@ -269,12 +276,24 @@ def reliance_GSM_CDMA
   elsif params[:operator_id] == "7"
     provider_band = "CDMA"
     circlevalue = "getCircleValcdma"
+=======
+  driver = Selenium::WebDriver.for :firefox
+  if params[:operator_id] == "6"
+    provider_band = "GSM"
+    arr=["#topup-gsm","#stv-gsm"]
+  elsif params[:operator_id] == "7"
+    provider_band = "CDMA"
+>>>>>>> 70b5221168b680587a3868bfcab60aff16fa3039
     arr=["#topup-cdma","#stv-cdma", "#MIP-cdma"]
   end
   driver.navigate.to "http://www.rcom.co.in/Rcom/personal/prepaid/PlansandPacks.html?i=IC"
   puts provider_band
   driver.find_element(:link, provider_band).click
+<<<<<<< HEAD
   driver.find_element(:id, circlevalue).find_element(:css,"option[value="+@region_link+"]").click
+=======
+  driver.find_element(:id, "getCircleValgsm").find_element(:css,"option[value="+@region_link+"]").click
+>>>>>>> 70b5221168b680587a3868bfcab60aff16fa3039
 arr.each do |type|
 driver.find_element(:css, type).click
 sleep 5
@@ -319,6 +338,14 @@ end
         puts "validity else===#{v}" 
     end 
   end
+<<<<<<< HEAD
+=======
+  
+  # puts @price
+  # puts @offer
+   puts @validity
+
+>>>>>>> 70b5221168b680587a3868bfcab60aff16fa3039
   if caty.blank?
     @name = "#{@price} #{@@pre} #{@region_name} #{@operator_name}"
     puts "here==#{@name}"
@@ -345,10 +372,21 @@ if (@price.to_i>9 && p != false)
    update_database
 end
 
+<<<<<<< HEAD
 end
 end
 driver.close
 headless.destroy
+=======
+
+# if @price.to_i > 9
+#   update_database
+# end
+
+end
+end
+driver.close
+>>>>>>> 70b5221168b680587a3868bfcab60aff16fa3039
 redirect_to '/airtel'
 
 end
@@ -370,4 +408,26 @@ def delete_packs
 	end
 end
 
+<<<<<<< HEAD
 end
+=======
+end
+
+
+
+# p=po.find_element(:css, "td:nth-child(2)") rescue false
+#   if p !=false
+#   @price=p.attribute("textContent").split(" ").join(" ")
+#   @offer=po.find_element(:css, "td:nth-child(3)").attribute("textContent").split(" ").join(" ")
+#     if ["#topup-gsm", "#topup-cdma"].any? {|n| type.include? n} then 
+#      @caty = "Talktime"
+#     else
+#       @validity=po.find_element(:css, "td:nth-child(4)").attribute("textContent").split(" ").join(" ")
+#     end 
+#   else
+#     puts p
+#   end
+#   puts @price
+#   puts @offer
+#   puts @validity
+>>>>>>> 70b5221168b680587a3868bfcab60aff16fa3039

@@ -59,7 +59,10 @@ GEM
       thor (~> 0.14)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+<<<<<<< HEAD
     headless (2.2.0)
+=======
+>>>>>>> 70b5221168b680587a3868bfcab60aff16fa3039
     heroku (3.41.5)
       heroku-api (>= 0.3.19)
       launchy (>= 0.3.2)
@@ -206,7 +209,10 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   coffee-rails (~> 4.0.1)
   figaro
+<<<<<<< HEAD
   headless
+=======
+>>>>>>> 70b5221168b680587a3868bfcab60aff16fa3039
   heroku
   httparty
   jbuilder (~> 2.0)
